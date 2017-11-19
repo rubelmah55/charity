@@ -1,0 +1,32 @@
+/*
+Theme Name: Charity Theme
+Theme URI: http://hypercoder.co
+Author: Azizul Haque
+Author URI: http://hypercoder.co
+Version: 1.0
+*/
+ul.social-icon {
+    display: inline-block;
+}
+ul.social-icon li {
+    width: 48px;
+    height: 48px;
+    background: #fea501;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 500px;
+    float: left;
+    transition: all 0.5s;
+}
+ul.social-icon li:hover{
+	background: #D08801;
+}
+ul.social-icon li a i {
+    font-size: 25px;
+    color: #fff;
+    font-weight: bold;
+}
+.news-main-row h3 {
+    margin-top: 0 !important;
+}
