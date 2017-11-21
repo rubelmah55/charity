@@ -8,6 +8,9 @@ $page_id = get_queried_object_id();
  ?>
 				
 		<!--=================================  HEADER START ==========================================-->
+		<?php 
+		if(get_field('header_enable', $page_id)):
+		?>
 		<div class="header-image clearfix" id="home" style="background-image: url(<?php the_field('header_image'); ?>);">			
 			<div class="header-section">
 				<div class="container notifyModal">
@@ -19,10 +22,12 @@ $page_id = get_queried_object_id();
 				</div>
 			</div>	
 		</div>
-		
+		<?php endif; ?>
 		<!--================================= HEADER ENDS ============================================-->	
 		<!--================================= VARIOUS CAUSES START ==========================================-->
-		
+	<?php 
+	if(get_field('various_enable', $page_id)):
+	?>	
 		<section class="section-padding section-1-bg">
 			<div class="container">
 				<div class="heading-div text-center">
@@ -55,11 +60,13 @@ $page_id = get_queried_object_id();
 				</div> 				
 			</div>			
 		</section>		
-		
+	<?php endif; ?>	
 		<!--================================= VARIOUS CAUSES ENDS ==========================================-->
 		
 		<!--================================= WHO WE CARE START ==========================================-->
-		
+	<?php 
+	if(get_field('care_enable', $page_id)):
+	?>	
 		<section class="section-3-bg who-care-section" id="about">
 			<div class="container-fluid no_padding">				
  				<div class="row no-row">
@@ -79,11 +86,13 @@ $page_id = get_queried_object_id();
 				</div>
 			</div>			
 		</section>		
-		
+	<?php endif; ?>	
 		<!--================================= WHO WE CARE ENDS ==========================================-->
 		
 		<!--================================= HELPS TO REDUCE START ==========================================-->
-		
+	<?php 
+	if(get_field('our_helps_enable', $page_id)):
+	?>	
 		<section class="section-padding section-1-bg">
 			<div class="container">
 				<div class="heading-div text-center">
@@ -127,11 +136,13 @@ $page_id = get_queried_object_id();
 				</div> 				
 			</div>			
 		</section>		
-		
+	<?php endif; ?>	
 		<!--================================= HELPS TO REDUCE ENDS ==========================================-->
 		
 		<!--================================= CAMPS WE DONE START ==========================================-->
-		
+	<?php 
+	if(get_field('camp_enable', $page_id)):
+	?>	
 		<section class="section-padding section-2-bg">
 			<div class="container">
 				<div class="heading-div text-center">
@@ -156,11 +167,13 @@ $page_id = get_queried_object_id();
 				</div> 				
 			</div>			
 		</section>		
-		
+	<?php endif; ?>
 		<!--================================= CAMPS WE DONE ENDS ==========================================-->		
 		
 		<!--================================= TOP DONATORS START ==========================================-->
-		
+	<?php 
+	if(get_field('donator_enable', $page_id)):
+	?>	
 		<section class="section-padding section-4-bg" id="donators">
 			<div class="container">
 				<div class="heading-div-2 text-center">
@@ -208,11 +221,13 @@ $page_id = get_queried_object_id();
 				</div>
 			</div>			
 		</section>		
-		
+	<?php endif; ?>	
 		<!--================================= TOP DONATORS ENDS ==========================================-->
 		
 		<!--================================= OUR INVOLVEMENTS START ==========================================-->
-		
+	<?php 
+	if(get_field('involvement_enable', $page_id)):
+	?>	
 		<section class="section-padding section-1-bg">
 			<div class="container">
 				<div class="heading-div text-center">
@@ -239,11 +254,13 @@ $page_id = get_queried_object_id();
 				</div> 				
 			</div>			
 		</section>		
-		
+	<?php endif; ?>
 		<!--================================= OUR INVOLVEMENTS ENDS ==========================================-->	
 		
 		<!--================================= ORPHAN CHILDREN START ==========================================-->
-		
+	<?php 
+	if(get_field('orphan_enable', $page_id)):
+	?>	
 		<section class="section-padding orphan-children-section" style="background-image: url(<?php the_field('orphan_children_bg'); ?>)">
 			<div class="container">	
 				<div class="col-sm-12 orphan-children-col text-center">
@@ -253,11 +270,13 @@ $page_id = get_queried_object_id();
 				</div>
 			</div>			
 		</section>		
-		
+	<?php endif; ?>	
 		<!--================================= ORPHAN CHILDREN ENDS ==========================================-->	
 		
 		<!--=================================  GALLERY START ==========================================-->
-		
+	<?php 
+	if(get_field('gallery_enable', $page_id)):
+	?>	
 		<section class="section-padding section-1-bg" id="gallery">
 			<div class="container">
 				<div class="heading-div text-center">
@@ -280,10 +299,13 @@ $page_id = get_queried_object_id();
 				</div>
 			</div>			
 		</section>		
-		
+	<?php endif; ?>	
 		<!--================================= GALLERY ENDS ==========================================-->
 		
 		<!--=================================  NEWS START ==========================================-->
+	<?php 
+	if(get_field('new_enable', $page_id)):
+	?>
 		<?php 
 		$args = array(
 			'post_type' => 'post',
@@ -307,9 +329,13 @@ $page_id = get_queried_object_id();
 			</div>			
 		</section>		
 		<?php endif; ?>
+	<?php endif; ?>
 		<!--================================= NEWS ENDS ==========================================-->		
 		
 		<!--=================================  VOLUNTEERS START ==========================================-->
+	<?php 
+	if(get_field('volunteer_enable', $page_id)):
+	?>
 		<?php 
 		if($volunteers = get_field('volunteer_item', $page_id)) :
 		?> 
@@ -331,11 +357,14 @@ $page_id = get_queried_object_id();
 					?>			
 			</div>			
 		</section>		
-					<?php endif; ?>		
+		<?php endif; ?>		
+	<?php endif; ?>		
 		<!--================================= VOLUNTEERS ENDS ==========================================-->
 		
 		<!--=================================  BEST MOVEMENT START ==========================================-->
-		
+	<?php 
+	if(get_field('moment_enable', $page_id)):
+	?>
 		<section class="section-padding section-2-bg">
 			<div class="container">
 				<div class="heading-div text-center">
@@ -347,80 +376,66 @@ $page_id = get_queried_object_id();
 				</div>								
 			</div>			
 		</section>		
-		
+	<?php endif; ?>	
 		<!--================================= BEST MOVEMENT ENDS ==========================================-->
 				
 		<!--=================================  UPCOMING EVENTS START ==========================================-->
-		
-		<section class="section-padding section-1-bg" id="events">
+	<?php 
+		if(get_field('event_enable', $page_id)):
+	?>
+		<?php 
+			$args = array( 
+				'post_type' => 'event', 
+				'posts_per_page' => 10 
+			);
+			$loop = new WP_Query( $args );
+			if ( $loop->have_posts() ) : 
+		?>		
+		<section class="section-padding section-1-bg" id="events" style="padding-bottom: 60px;">
 			<div class="container">
 				<div class="heading-div text-center">
-					<h2>Upcoming Events</h2>
+					<h2><?php the_field('event_main_title', $page_id); ?></h2>
 					<img src="<?php echo get_template_directory_uri(); ?>/img/90x10x1.png" alt="90x10x1" />
-				</div> 			
+				</div>
+ 				<?php 
+ 				while($loop->have_posts()) : $loop->the_post();
+ 				?>
 				<div class="row events-row-1">
 					<div class="col-sm-6 events-img">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/590x280x1.jpg" alt="590x280x1" class="img-responsive" />
+						<?php the_post_thumbnail('event'); ?>
 					</div>
 					<div class="col-sm-6 events-col">
-						<h3>Wealth and Health</h3>
+						<h3><?php the_title(); ?></h3>
 						<div class="col-sm-12 events-date-div">
 							<div class="col-sm-6">
 								<ul>
 									<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/16x16x4.png" alt="16x16x4" /></a></li>
-									<li> Montreal, Qc.</li>
+									<li><?php the_field('event_location'); ?></li>
 								</ul>
 							</div>	
 							<div class="col-sm-6">							
 								<ul>
 									<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/16x16x5.png" alt="16x16x5" /></a></li>
-									<li class="events-date">Feb 02, 2017</li>
+									<li class="events-date"><?php the_field('event_date'); ?></li>
 								</ul>
 							</div>
 						</div>
-						<p>Donec varius sodales orci. Class aptent taciti sociosqu torquent, per inceptos himenaeos. End of content.
-							Aenean arcu viverra varius sodales sociosqu torquent, per inceptos himenaeos.
-						</p>
-						<p>	Aenean arcu viverra varius sodales sociosqu torquent, per inceptos himenaeos.Donec varius sodales orci.
-						Class aptent taciti sociosqu torquent, per inceptos himenaeos. End of content.
-						</p>						
+						<p><?php the_content(); ?></p>						
 					</div>					
 				</div>
-				<div class="row events-second-row">
-					<div class="col-sm-6 events-img">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/590x280x2.jpg" alt="590x280x2" class="img-responsive" />
-					</div>
-					<div class="col-sm-6 events-col">
-						<h3>All Over World NGO Meet</h3>
-						<div class="col-sm-12 events-date-div">
-							<div class="col-sm-6">
-								<ul>
-									<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/16x16x4.png" alt="16x16x4" /></a></li>
-									<li> Montreal, Qc.</li>
-								</ul>
-							</div>	
-							<div class="col-sm-6">							
-								<ul>
-									<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/16x16x5.png" alt="16x16x5" /></a></li>
-									<li class="events-date">Feb 02, 2017</li>
-								</ul>
-							</div>
-						</div>
-						<p>Donec varius sodales orci. Class aptent taciti sociosqu torquent, per inceptos himenaeos. End of content.
-							Aenean arcu viverra varius sodales sociosqu torquent, per inceptos himenaeos.
-						</p>
-						<p>	Aenean arcu viverra varius sodales sociosqu torquent, per inceptos himenaeos.Donec varius sodales orci.
-						Class aptent taciti sociosqu torquent, per inceptos himenaeos. End of content.
-						</p>						
-					</div>					
-				</div>
+				<?php endwhile; ?>
 			</div>			
 		</section>		
-		
+		<?php endif; 
+		wp_reset_postdata()
+		?>
+	<?php endif; ?>
 		<!--================================= UPCOMING EVENTS ENDS ==========================================-->
 		
 		<!--=================================  TESTIMONIAL START ==========================================-->
-		
+	<?php 
+	if(get_field('testimonial_enable', $page_id)):
+	?>	
 		<section class="section-padding section-4-bg">
 			<div class="container">
 				<div class="heading-div-2 text-center">
@@ -437,11 +452,13 @@ $page_id = get_queried_object_id();
 				</div>				
 			</div>			
 		</section>		
-		
+	<?php endif; ?>	
 		<!--================================= TESTIMONIAL ENDS ==========================================-->
 		
 		<!--================================= MOVING WITH START ==========================================-->
-		
+	<?php 
+	if(get_field('moving_enable', $page_id)):
+	?>	
 		<section class="section-padding section-2-bg">
 			<div class="container">
 				<div class="heading-div text-center">
@@ -465,11 +482,13 @@ $page_id = get_queried_object_id();
 				</div>				
 			</div>			
 		</section>		
-		
+	<?php endif; ?>	
 		<!--================================= MOVING WITH ENDS ==========================================-->		
 			
 		<!--================================= WONDERFUL DAY START ==========================================-->
-		
+	<?php 
+	if(get_field('wonderful_enable', $page_id)):
+	?>	
 		<section class="section-padding section-1-bg">
 			<div class="container">							
 				<div class="row">					
@@ -484,11 +503,13 @@ $page_id = get_queried_object_id();
 				</div>				
 			</div>			
 		</section>		
-		
+	<?php endif; ?>	
 		<!--================================= WONDERFUL DAY ENDS ==========================================-->
 		
 		<!--================================= HAPPIEST MOMENT START ==========================================-->
-		
+	<?php 
+	if(get_field('happiest_enable', $page_id)):
+	?>	
 		<section class="section-padding section-2-bg">
 			<div class="container">							
 				<div class="row">					
@@ -503,11 +524,13 @@ $page_id = get_queried_object_id();
 				</div>				
 			</div>			
 		</section>		
-		
+	<?php endif; ?>	
 		<!--================================= HAPPIEST MOMENT ENDS ==========================================-->
 		
 		<!--================================= FAQ START ==========================================-->
-		
+	<?php 
+	if(get_field('faq_enable', $page_id)):
+	?>	
 		<section class="section-padding section-1-bg">
 			<div class="container">							
 				<div class="heading-div text-center">
@@ -534,11 +557,13 @@ $page_id = get_queried_object_id();
 				</div>	
 			</div>			
 		</section>		
-		
+	<?php endif; ?>	
 		<!--================================= FAQ ENDS ==========================================-->
 		
 		<!--================================= SPONSORS START ==========================================-->
-		
+	<?php 
+	if(get_field('sponsor_enable', $page_id)):
+	?>		
 		<section class="section-padding section-1-bg">
 			<div class="container">							
 				<div class="heading-div text-center">
@@ -561,7 +586,7 @@ $page_id = get_queried_object_id();
 				</div>	
 			</div>			
 		</section>		
-		
+	<?php endif; ?>	
 		<!--================================= SPONSORS ENDS ==========================================-->
 		
 		<!--================================= SINGLE IMAGE START ==========================================-->

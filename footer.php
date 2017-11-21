@@ -14,22 +14,25 @@
 								foreach($contact_item as $contact) :
 							?>
 							<div class="col-xs-6 col-sm-3 contact-space contact-space-1">
-								<img src="" alt="48x48x5" />
-								<p>1800-234-7689</p>
+								<img src="<?php echo $contact['contact_img']; ?>" alt="48x48x5" />
+								<p><?php echo $contact['contact_text']; ?></p>
 							</div>
 							<?php endforeach; ?>
 						</div>
 						<div class="separator"></div>
-						<ul class="social-icon">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
-						</ul>
+							<ul class="social-icon">
+								<?php 
+									$socail_item = get_field('socail_item', 'options');
+								?>
+								<?php 
+									foreach($socail_item as $socail) :
+								?>
+								<li><a href="<?php echo $socail['socail_url']; ?>"><i class="fa <?php echo $socail['icon']; ?>"></i></a></li>
+								<?php endforeach; ?>
+							</ul>
 						<div class="separator"></div>
 						<div class="copyright">
-							<p>2017 &copy; All Rights Reserved</p>								
+							<p><?php the_field('copyright', 'options'); ?></p>								
 						</div>
 					</div>
 				</div>

@@ -1,8 +1,3 @@
-// [MASTER JAVASCRIPT]
-//	Project     :	CHARITY TEMPLATES
-//	Version     :	1.0
-//	Last Change : 	02/02/2017
-//	Primary Use :   CHARITY TEMPLATES
 
 	$(document).on('ready', function() {
 		"use strict"; //Start of Use Strict
@@ -204,34 +199,3 @@
 		return false;
 		// End of use strict
 	});
-$(document).ready(function(){
-		      $('#slider').slick({
-		      		autoplay:true,
-		      		dots: true, 
-		      		arrows:false,
-		      		responsive: [
-				    {
-				      breakpoint: 1024,
-				      settings: {
-				        slidesToShow: 1,
-				        slidesToScroll: 1,
-				        infinite: true,
-				      
-				      }
-				    },
-				    {
-				      breakpoint: 600,
-				      settings: {
-				        slidesToShow: 1,
-				        slidesToScroll: 1
-				      }
-				    },
-				    {
-				      breakpoint: 480,
-				      settings: {
-				        slidesToShow: 1,
-				        slidesToScroll: 1
-				      }
-				    }]
-		      });
-		    });

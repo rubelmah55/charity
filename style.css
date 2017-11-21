@@ -30,3 +30,16 @@ ul.social-icon li a i {
 .news-main-row h3 {
     margin-top: 0 !important;
 }
+ul#menu-header-menu li {
+    padding: 0 10px;
+}
+ul#menu-header-menu li a {
+    transition: 0.3s ease;
+}
+ul#menu-header-menu li a:hover {
+    color: #fea501 !important;
+    border-bottom: 1px dotted #fea501;
+}
+.events-row-1 {
+    margin-bottom: 30px;
+}

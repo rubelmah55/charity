@@ -7,8 +7,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 			
 		<?php if (get_field('favicon', 'options')): ?>
-	<link rel="icon" href="<?php the_field('favicon', 'options'); ?>" sizes="32x32">
-	<?php endif; ?>
+		<link rel="icon" href="<?php the_field('favicon', 'options'); ?>" sizes="32x32">
+		<?php endif; ?>
 
 		<?php wp_head(); ?>
 	</head>
@@ -36,38 +36,20 @@
 						</button>					
 					</div>
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav navbar-right" id="menu-list">
-							<li class="menu">
-								<a href="#home" class="pagescroll">
-								Home
-								</a>
-							</li>
-							<li class="menu">
-								<a href="#about" class="pagescroll">
-									About
-								</a>
-							</li>									
-							<li class="menu">
-								<a href="#donators" class="pagescroll">
-								Donators
-								</a>
-							</li>	
-							<li class="menu">
-								<a href="#gallery" class="pagescroll">
-								Gallery
-								</a>
-							</li>
-							<li class="menu">
-								<a href="#events" class="pagescroll">
-								Events
-								</a>
-							</li>
-							<li class="menu">
-								<a href="#contact" class="pagescroll">
-								Contact
-								</a>
-							</li>							
-						</ul>
+						<?php wp_nav_menu( 
+								  array(
+								  'menu'               => 'Primary Menu',
+								  'theme_location'     => 'menu-1',
+								  'depth'              => 2,
+								  'container'          => 'false',
+								  'menu_class'         => 'nav navbar-nav navbar-right',
+								  'menu_id'            => '',
+								  //'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
+								  'walker'             => new wp_bootstrap_navwalker()
+								  ) 
+							  ); 
+						  ?>
+						
 					</div>
 					<!-- /.navbar-collapse -->
 				</div>
